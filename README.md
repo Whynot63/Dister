@@ -2,10 +2,8 @@
 Dister - Distributed runner for python tasks
 
 # Example
+you can check actual version in https://github.com/Whynot63/Dister/blob/master/src/example.py
 ```python
-# see actual version in https://github.com/Whynot63/Dister/blob/master/src/example.py
-
-
 import marshal
 
 from tasks import exec_func
