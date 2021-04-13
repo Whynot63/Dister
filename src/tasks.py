@@ -29,7 +29,7 @@ def install(package):
 @app.task
 def exec_func(
     code_string: str,
-    requirements: dict[str, str] = None,
+    requirements: dict = None,
     args: tuple = None,
     kwargs: dict = None,
 ):
