@@ -1,5 +1,6 @@
 import importlib
 import marshal
+import os 
 import pip
 import types
 
@@ -9,10 +10,12 @@ from celery.utils.log import get_task_logger
 
 logger = get_task_logger(__name__)
 
+redis_url = os.environ.get("REDIS_HOST", "redis")
+
 app = Celery(
     "tasks",
-    broker="redis://redis",
-    backend="redis://redis",
+    broker=f"redis://{redis_url}",
+    backend=f"redis://{redis_url}",
 )
 app.conf.task_serializer = "pickle"
 app.conf.accept_content = ["pickle", "json"]
