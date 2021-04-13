@@ -23,8 +23,6 @@ app.conf.accept_content = ["pickle", "json"]
 
 def install(package):
     # https://stackoverflow.com/a/15950647
-
-    warnings.simplefilter("ignore")
     pip_main = pip.main if hasattr(pip, "main") else pip._internal.main
     pip_main(["install", package])
 
